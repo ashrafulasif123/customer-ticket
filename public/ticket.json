@@ -1,0 +1,137 @@
+[
+    {
+      "id": "#1024",
+      "title": "Payment Failure on Checkout",
+      "description": "Customer unable to complete purchase using credit card. Error code 502.",
+      "customerName": "Ariful Islam",
+      "priority": "HIGH PRIORITY",
+      "status": "open",
+      "createdDate": "2026-04-28T10:30:00Z"
+    },
+    {
+      "id": "#4582",
+      "title": "Slow Website Loading",
+      "description": "The home page takes more than 10 seconds to load in mobile browsers.",
+      "customerName": "Nusrat Jahan",
+      "priority": "MEDIUM PRIORITY",
+      "status": "open",
+      "createdDate": "2026-04-28T11:15:00Z"
+    },
+    {
+      "id": "#9931",
+      "title": "Change Shipping Address",
+      "description": "User wants to update the delivery address for order #ORD-552.",
+      "customerName": "Tanvir Ahmed",
+      "priority": "LOW PRIORITY",
+      "status": "open",
+      "createdDate": "2026-04-29T09:00:00Z"
+    },
+    {
+      "id": "#2210",
+      "title": "Login Authentication Error",
+      "description": "User cannot log in despite resetting the password multiple times.",
+      "customerName": "Sumi Akter",
+      "priority": "HIGH PRIORITY",
+      "status": "open",
+      "createdDate": "2026-04-29T14:20:00Z"
+    },
+    {
+      "id": "#7745",
+      "title": "Product Quality Issue",
+      "description": "Received a damaged item. Requesting a replacement or refund.",
+      "customerName": "Rakib Hossain",
+      "priority": "MEDIUM PRIORITY",
+      "status": "open",
+      "createdDate": "2026-04-29T16:45:00Z"
+    },
+    {
+      "id": "#3367",
+      "title": "Feature Request: Dark Mode",
+      "description": "Customer suggesting a dark mode option for the dashboard.",
+      "customerName": "Mehedi Hasan",
+      "priority": "LOW PRIORITY",
+      "status": "open",
+      "createdDate": "2026-04-30T08:10:00Z"
+    },
+    {
+      "id": "#8812",
+      "title": "Double Charge on Subscription",
+      "description": "The system billed the customer twice for the month of April.",
+      "customerName": "Farhana Yasmin",
+      "priority": "HIGH PRIORITY",
+      "status": "open",
+      "createdDate": "2026-04-30T10:05:00Z"
+    },
+    {
+      "id": "#1190",
+      "title": "Email Notification Not Working",
+      "description": "Customer is not receiving any order confirmation emails.",
+      "customerName": "Kamal Uddin",
+      "priority": "MEDIUM PRIORITY",
+      "status": "open",
+      "createdDate": "2026-04-30T12:30:00Z"
+    },
+    {
+      "id": "#5543",
+      "title": "Broken Image Links",
+      "description": "Product images are not showing up in the accessories category.",
+      "customerName": "Sadia Afrin",
+      "priority": "LOW PRIORITY",
+      "status": "open",
+      "createdDate": "2026-04-30T15:55:00Z"
+    },
+    {
+      "id": "#6621",
+      "title": "API Integration Down",
+      "description": "External API calls are failing since the last update.",
+      "customerName": "Zubayer Al-Mahmud",
+      "priority": "HIGH PRIORITY",
+      "status": "open",
+      "createdDate": "2026-05-01T07:45:00Z"
+    },
+    {
+      "id": "#4409",
+      "title": "Wrong Size Delivered",
+      "description": "Ordered size L but received size M. Requesting exchange.",
+      "customerName": "Maliha Khan",
+      "priority": "MEDIUM PRIORITY",
+      "status": "open",
+      "createdDate": "2026-05-01T08:20:00Z"
+    },
+    {
+      "id": "#2091",
+      "title": "Update Profile Picture",
+      "description": "Unable to upload a new profile picture. File format error.",
+      "customerName": "Abidur Rahman",
+      "priority": "LOW PRIORITY",
+      "status": "open",
+      "createdDate": "2026-05-01T09:00:00Z"
+    },
+    {
+      "id": "#9087",
+      "title": "Database Connection Timeout",
+      "description": "Frequent timeouts occurring during peak traffic hours.",
+      "customerName": "Rashed Chowdhury",
+      "priority": "HIGH PRIORITY",
+      "status": "open",
+      "createdDate": "2026-05-01T09:15:00Z"
+    },
+    {
+      "id": "#3124",
+      "title": "Coupon Code Not Working",
+      "description": "The code 'SAVE20' shows as expired although it is valid.",
+      "customerName": "Laila Begum",
+      "priority": "MEDIUM PRIORITY",
+      "status": "open",
+      "createdDate": "2026-05-01T09:25:00Z"
+    },
+    {
+      "id": "#5567",
+      "title": "Inquiry about Refund Policy",
+      "description": "Customer wants to know the duration for processing a refund.",
+      "customerName": "Hassan Mahmud",
+      "priority": "LOW PRIORITY",
+      "status": "open",
+      "createdDate": "2026-05-01T09:30:00Z"
+    }
+  ]
