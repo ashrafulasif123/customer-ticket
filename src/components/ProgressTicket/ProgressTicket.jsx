@@ -6,8 +6,16 @@ const ProgressTicket = ({ progressTicket, handleResolvedTicket, resolvedTickets 
             <h2 class="text-lg font-semibold text-gray-900 mb-5">
                 {title}
             </h2>
-            <button disabled={isResolved} onClick={() => handleResolvedTicket(progressTicket)} class="w-full bg-[#10a37f] text-white font-medium py-3 rounded-lg hover:bg-[#0e8c6c] transition-colors">
-                Complete
+            <button
+                disabled={isResolved}
+                onClick={() => handleResolvedTicket(progressTicket)}
+                className={`w-full font-medium py-3 rounded-lg transition-colors
+                        ${isResolved
+                        ? 'bg-gray-400 cursor-not-allowed opacity-60'
+                        : 'bg-[#10a37f] text-white hover:bg-[#0e8c6c]'
+                    }`}
+            >
+                {isResolved ? 'Completed' : 'Complete'}
             </button>
         </div>
     );
