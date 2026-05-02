@@ -2,7 +2,7 @@ const CustomerTicket = ({ customerTicket, handleTicketInProgress }) => {
     // console.log(customerTicket)
     const { id, customerName, description, createdDate, priority, status, title } = customerTicket
     return (
-        <div onClick={() => handleTicketInProgress(customerTicket)} class="max-w-xl p-5 bg-white border border-gray-400 rounded-lg shadow-sm font-sans">
+        <div onClick={() => handleTicketInProgress(customerTicket)} className="max-w-xl p-5 bg-white border border-gray-400 rounded-lg shadow-sm font-sans hover:cursor-pointer">
             <div class="flex justify-between items-start mb-2">
                 <h3 class="text-xl font-bold text-slate-800">{title}</h3>
                 <div class="flex items-center gap-2 bg-yellow-100 px-3 py-1.5 rounded-full">
