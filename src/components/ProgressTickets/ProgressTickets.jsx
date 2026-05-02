@@ -1,11 +1,11 @@
 import ProgressTicket from "../ProgressTicket/ProgressTicket";
 
-const ProgressTickets = ({progressTickets}) => {
+const ProgressTickets = ({ progressTickets, handleResolvedTicket, resolvedTickets }) => {
     // console.log(progressTickets)
-   return (
+    return (
         <div>
             {
-                progressTickets.map(progressTicket => <ProgressTicket key={progressTicket.id} progressTicket={progressTicket}></ProgressTicket>)
+                progressTickets.map(progressTicket => <ProgressTicket key={progressTicket.id} progressTicket={progressTicket} handleResolvedTicket={handleResolvedTicket} resolvedTickets={resolvedTickets}></ProgressTicket>)
             }
         </div>
     );

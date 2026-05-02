@@ -11,22 +11,31 @@ const CustomerTickets = ({ ticketPromise }) => {
     const fetchingTickets = use(ticketPromise)
     const [customerTickets, setCustomerTickets] = useState(fetchingTickets)
     const [progressTickets, setProgressTickets] = useState([])
+    const [resolvedTickets, setResolvedTickets] = useState([])
 
     const handleTicketInProgress = (ticket) => {
 
-        const exists = progressTickets.find(progressTicket => progressTicket.id === ticket.id)
-        if (!exists) {
+        const progressExists = progressTickets.find(progressTicket => progressTicket.id === ticket.id)
+        if (!progressExists) {
             setProgressTickets([...progressTickets, ticket])
-            const updateCustomerTickets = customerTickets.map(customerTicket =>{
-                if(!exists){
-                    return {...customerTicket, status: 'In-Progress'}
+            const updateCustomerTickets = customerTickets.map(customerTicket => {
+                // const customerExists = customerTicket.id === ticket.id
+                if (customerTicket.id === ticket.id) {
+                    return { ...customerTicket, status: 'In-Progress' }
                 }
                 return customerTicket
             })
+            setCustomerTickets(updateCustomerTickets)
+        }
+        else {
+            toast("Your ticket already in progress")
             return
         }
-        toast("This ticket already in Pending")
-        return
+    }
+
+    const handleResolvedTicket = (ticket) => {
+        console.log(ticket)
+        setResolvedTickets([...resolvedTickets, ticket])
     }
 
     return (
@@ -35,8 +44,8 @@ const CustomerTickets = ({ ticketPromise }) => {
             <div className='max-w-[1300px] m-auto'>
 
                 <div className='grid grid-cols-2 gap-4'>
-                    <Progress progress='In Progress'></Progress>
-                    <Progress progress="Resolved"></Progress>
+                    <Progress progress='In Progress' progressTickets={progressTickets}></Progress>
+                    <Progress progress="Resolved" resolvedTickets={resolvedTickets}></Progress>
                 </div>
                 <div className='grid grid-cols-12 gap-4 mb-4'>
                     <div className='col-span-9'>
@@ -51,7 +60,7 @@ const CustomerTickets = ({ ticketPromise }) => {
                         <h1 className='text-xl font-bold'>Task Status</h1>
                         <div className="">
                             {
-                                <ProgressTickets progressTickets={progressTickets}></ProgressTickets>
+                                <ProgressTickets progressTickets={progressTickets} handleResolvedTicket={handleResolvedTicket} resolvedTickets={resolvedTickets}></ProgressTickets>
                             }
                         </div>
                     </div>

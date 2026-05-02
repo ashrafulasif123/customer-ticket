@@ -21,24 +21,28 @@ import bgImage from '../../assets/hero.png'
  */
 
 
-const Progress = ({ progress }) => {
+const Progress = ({ progress, progressTickets, resolvedTickets }) => {
+    // console.log(progressTickets.length)
+    let total;
     let gradient;
-    if(progress === 'In Progress'){
+    if (progress === 'In Progress') {
         gradient = `linear-gradient(to bottom right, rgba(99,46,227,0.9), rgba(159,98,242,0.9)), url('${bgImage}')`;
+        total = progressTickets.length
     }
-    else{
+    else {
         gradient = `linear-gradient(to bottom right, rgba(84,207,104,0.9), rgba(0,130,122,0.9)), url('${bgImage}')`;
+        total = resolvedTickets.length
     }
 
     return (
-        <div 
+        <div
             style={{
                 backgroundImage: gradient
             }}
-        className='h-[200px] border flex justify-center items-center ${gradient} bg-cover bg-center my-10'>
+            className='h-[200px] border flex justify-center items-center ${gradient} bg-cover bg-center my-10'>
             <div className="text-center flex flex-col space-y-2">
                 <h2 className="text-2xl text-white">{progress}</h2>
-                <span className="text-3xl text-white">0</span>
+                <span className="text-3xl text-white">{total}</span>
             </div>
         </div>
     );
