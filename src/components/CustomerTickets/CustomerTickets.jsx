@@ -39,6 +39,8 @@ const CustomerTickets = ({ ticketPromise }) => {
         setResolvedTickets([...resolvedTickets, ticket])
         const updateCustomerTickets = customerTickets.filter(customerTicket => customerTicket.id !== ticket.id)
         setCustomerTickets(updateCustomerTickets)
+        const updateProgressTickets = progressTickets.filter(progressTicket => progressTicket.id !== ticket.id)
+        setProgressTickets(updateProgressTickets)
     }
 
     return (
