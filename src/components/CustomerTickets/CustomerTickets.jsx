@@ -4,6 +4,7 @@ import Navbar from '../Navbar/Navbar'
 import Progress from '../Progress/Progress'
 import ProgressTickets from "../ProgressTickets/ProgressTickets";
 import { toast } from "react-toastify";
+import ResolvedTickets from "../ResolvedTickets/ResolvedTickets";
 
 const CustomerTickets = ({ ticketPromise }) => {
 
@@ -36,32 +37,39 @@ const CustomerTickets = ({ ticketPromise }) => {
     const handleResolvedTicket = (ticket) => {
         console.log(ticket)
         setResolvedTickets([...resolvedTickets, ticket])
+        const updateCustomerTickets = customerTickets.filter(customerTicket => customerTicket.id !== ticket.id)
+        setCustomerTickets(updateCustomerTickets)
     }
 
     return (
         <>
             <Navbar></Navbar>
-            <div className='max-w-[1300px] m-auto'>
-
-                <div className='grid grid-cols-2 gap-4'>
-                    <Progress progress='In Progress' progressTickets={progressTickets}></Progress>
-                    <Progress progress="Resolved" resolvedTickets={resolvedTickets}></Progress>
-                </div>
-                <div className='grid grid-cols-12 gap-4 mb-4'>
-                    <div className='col-span-9'>
-                        <h1 className='text-xl font-bold'>Customer Ticket: {customerTickets.length}</h1>
-                        <div className="grid grid-cols-2 gap-3 mt-4">
-                            {
-                                customerTickets.map(customerTicket => <CustomerTicket key={customerTicket.id} customerTicket={customerTicket} handleTicketInProgress={handleTicketInProgress}></CustomerTicket>)
-                            }
-                        </div>
+            <div className="bg-gray-100">
+                <div className='max-w-[1300px] m-auto'>
+                    <div className='grid grid-cols-2 gap-4'>
+                        <Progress progress='In Progress' progressTickets={progressTickets}></Progress>
+                        <Progress progress="Resolved" resolvedTickets={resolvedTickets}></Progress>
                     </div>
-                    <div className='col-span-3'>
-                        <h1 className='text-xl font-bold'>Task Status</h1>
-                        <div className="">
-                            {
-                                <ProgressTickets progressTickets={progressTickets} handleResolvedTicket={handleResolvedTicket} resolvedTickets={resolvedTickets}></ProgressTickets>
-                            }
+                    <div className='grid grid-cols-12 gap-4 mb-4'>
+                        <div className='col-span-9'>
+                            <h1 className='text-xl font-bold'>Customer Ticket: {customerTickets.length}</h1>
+                            <div className="grid grid-cols-2 gap-3 mt-4">
+                                {
+                                    customerTickets.map(customerTicket => <CustomerTicket key={customerTicket.id} customerTicket={customerTicket} handleTicketInProgress={handleTicketInProgress}></CustomerTicket>)
+                                }
+                            </div>
+                        </div>
+                        <div className='col-span-3'>
+                            <div className="mb-4">
+                                {
+                                    <ProgressTickets progressTickets={progressTickets} handleResolvedTicket={handleResolvedTicket} resolvedTickets={resolvedTickets}></ProgressTickets>
+                                }
+                            </div>
+                            <div className="">
+                                {
+                                    <ResolvedTickets resolvedTickets={resolvedTickets}></ResolvedTickets>
+                                }
+                            </div>
                         </div>
                     </div>
                 </div>

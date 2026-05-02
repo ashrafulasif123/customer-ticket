@@ -2,7 +2,7 @@ const ProgressTicket = ({ progressTicket, handleResolvedTicket, resolvedTickets 
     const { id, title } = progressTicket
     const isResolved = resolvedTickets.find(resolvedTicket => resolvedTicket.id === id)
     return (
-        <div class="bg-white p-2 rounded-lg shadow-[0_4px_6px_-1px_rgba(0,0,0,0.05),0_2px_4px_-1px_rgba(0,0,0,0.03)] border border-gray-400 w-[350px] my-4">
+        <div class="bg-gray-100 p-2 rounded-lg shadow-[0_4px_6px_-1px_rgba(0,0,0,0.05),0_2px_4px_-1px_rgba(0,0,0,0.03)]  my-4">
             <h2 class="text-lg font-semibold text-gray-900 mb-5">
                 {title}
             </h2>
